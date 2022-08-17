@@ -12,6 +12,9 @@ public class HashNode {
     int value;
     HashNode next;
 
+    public HashNode() {
+    }
+
     public HashNode(int key, int value) {
         this.key = key;
         this.value = value;

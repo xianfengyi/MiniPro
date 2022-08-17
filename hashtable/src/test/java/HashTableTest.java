@@ -26,4 +26,16 @@ public class HashTableTest {
         Assert.assertEquals(12,hashTable.get(2).intValue());
         Assert.assertEquals(14,hashTable.get(4).intValue());
     }
+
+    @Test
+    public void testRemove(){
+        hashTable.add(1,11);
+        hashTable.add(2,12);
+        hashTable.add(3,13);
+        hashTable.add(4,14);
+
+        Assert.assertEquals(12,hashTable.get(2).intValue());
+        hashTable.remove(2);
+        Assert.assertNotNull(hashTable.get(2));
+    }
 }

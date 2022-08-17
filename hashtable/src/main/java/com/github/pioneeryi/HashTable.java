@@ -14,8 +14,8 @@ public class HashTable {
     public Integer get(int key) {
         int index = hash(key);
         HashNode node = buckets[index];
-        while(node!=null){
-            if(node.key==key){
+        while (node != null) {
+            if (node.key == key) {
                 return node.value;
             }
             node = node.next;
@@ -27,8 +27,8 @@ public class HashTable {
         int index = hash(key);
         HashNode node = buckets[index];
 
-        while(node!=null){
-            if(node.key==key){
+        while (node != null) {
+            if (node.key == key) {
                 node.value = value;
                 return;
             }
@@ -37,9 +37,28 @@ public class HashTable {
 
         // head insert
         HashNode head = buckets[index];
-        HashNode newHead= new HashNode(key,value);
+        HashNode newHead = new HashNode(key, value);
         newHead.next = head;
         buckets[index] = newHead;
+    }
+
+    public void remove(int key) {
+        int index = hash(key);
+
+        HashNode dummyHead = new HashNode();
+        HashNode dummyNode = dummyHead;
+        HashNode node = buckets[index];
+        dummyNode.next = node;
+
+        while (node != null) {
+            if (node.key == key) {
+                dummyNode.next = node.next;
+                return;
+            }
+            node = node.next;
+            dummyNode = dummyNode.next;
+        }
+        buckets[index] = dummyHead.next;
     }
 
     private int hash(int key) {
