@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class HashTableTest {
 
-    private HashTable hashTable = new HashTable();
+    private HashTable<Integer,Integer> hashTable = new HashTable();
 
     @Test
     public void test1() {

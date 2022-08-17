@@ -1,19 +1,21 @@
 package com.github.pioneeryi;
 
+import java.util.Objects;
+
 /**
  * HashTable.
  *
  * @author yixianfeng
  * @since 2022/8/17 17:24
  */
-public class HashTable {
+public class HashTable<K, V> {
 
     private static final int DEFAULT_SIZE = 5;
     private HashNode[] buckets = new HashNode[DEFAULT_SIZE];
 
-    public Integer get(int key) {
+    public V get(K key) {
         int index = hash(key);
-        HashNode node = buckets[index];
+        HashNode<K,V> node = buckets[index];
         while (node != null) {
             if (node.key == key) {
                 return node.value;
@@ -23,7 +25,7 @@ public class HashTable {
         return null;
     }
 
-    public void add(int key, int value) {
+    public void add(K key, V value) {
         int index = hash(key);
         HashNode node = buckets[index];
 
@@ -42,7 +44,7 @@ public class HashTable {
         buckets[index] = newHead;
     }
 
-    public void remove(int key) {
+    public void remove(K key) {
         int index = hash(key);
 
         HashNode dummyHead = new HashNode();
@@ -61,7 +63,7 @@ public class HashTable {
         buckets[index] = dummyHead.next;
     }
 
-    private int hash(int key) {
-        return key % DEFAULT_SIZE;
+    private int hash(K key) {
+        return Objects.hashCode(key) % DEFAULT_SIZE;
     }
 }
