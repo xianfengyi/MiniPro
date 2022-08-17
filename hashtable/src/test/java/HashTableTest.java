@@ -30,11 +30,28 @@ public class HashTableTest {
     @Test
     public void testRemove(){
         hashTable.add(2,12);
-        hashTable.add(7,17);
-        hashTable.add(12,112);
+        hashTable.add(12,17);
+        hashTable.add(22,112);
 
-        Assert.assertEquals(17,hashTable.get(7).intValue());
-        hashTable.remove(7);
-        Assert.assertNull(hashTable.get(7));
+        Assert.assertEquals(17,hashTable.get(12).intValue());
+        hashTable.remove(12);
+        Assert.assertNull(hashTable.get(12));
+    }
+
+    @Test
+    public void testExpandCapacity(){
+        hashTable.add(1,11);
+        hashTable.add(2,12);
+        hashTable.add(3,13);
+        hashTable.add(4,14);
+        hashTable.add(5,15);
+        hashTable.add(11,111);
+
+        Assert.assertEquals(10,hashTable.capacity());
+        Assert.assertEquals(111,hashTable.get(11).intValue());
+
+        hashTable.add(12,112);
+        Assert.assertEquals(20,hashTable.capacity());
+        Assert.assertEquals(111,hashTable.get(11).intValue());
     }
 }
