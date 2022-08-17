@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
- * HashTable.
+ * Custom simple hashtable.
  *
  * @author yixianfeng
  * @since 2022/8/17 17:24
@@ -103,7 +103,7 @@ public class HashTable<K, V> {
         return size;
     }
 
-    public int capacity(){
+    public int capacity() {
         return capacity;
     }
 
