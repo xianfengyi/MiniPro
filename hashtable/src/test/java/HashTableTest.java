@@ -29,13 +29,12 @@ public class HashTableTest {
 
     @Test
     public void testRemove(){
-        hashTable.add(1,11);
         hashTable.add(2,12);
-        hashTable.add(3,13);
-        hashTable.add(4,14);
+        hashTable.add(7,17);
+        hashTable.add(12,112);
 
-        Assert.assertEquals(12,hashTable.get(2).intValue());
-        hashTable.remove(2);
-        Assert.assertNotNull(hashTable.get(2));
+        Assert.assertEquals(17,hashTable.get(7).intValue());
+        hashTable.remove(7);
+        Assert.assertNull(hashTable.get(7));
     }
 }
