@@ -2,17 +2,13 @@ package com.github.pioneeryi.producersconsumer.waitnotify;
 
 import java.util.Queue;
 import java.util.Random;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class Producer implements Runnable {
     private Queue<Integer> queue;
-    private int capacity;
+    private int capacity = 5;
 
-    public Producer(Queue<Integer> queue, int capacity) {
+    public Producer(Queue<Integer> queue) {
         this.queue = queue;
-        this.capacity = capacity;
     }
 
     @Override
@@ -27,6 +23,7 @@ public class Producer implements Runnable {
                     }
                 }
                 int number = new Random().nextInt();
+                queue.offer(number);
                 System.out.println("produce: " + number);
                 try {
                     Thread.sleep(500);
@@ -35,7 +32,6 @@ public class Producer implements Runnable {
                 }
                 queue.notifyAll();
             }
-
         }
     }
 }
