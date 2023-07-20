@@ -11,7 +11,6 @@
     <modules>
         <module>hashtable</module>
         <module>simple-stack</module>
-        <module>concurrence-action</module>
     </modules>
 
     <name>tiny-pro</name>
