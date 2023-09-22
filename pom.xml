@@ -14,6 +14,7 @@
         <module>simple-stack</module>
         <module>lru-cache</module>
         <module>concurrence-action</module>
+        <module>mini-list</module>
     </modules>
 
     <name>tiny-pro</name>
