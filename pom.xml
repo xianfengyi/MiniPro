@@ -11,6 +11,7 @@
     <modules>
         <module>hashtable</module>
         <module>array-sort</module>
+        <module>simple-stack</module>
     </modules>
 
     <name>tiny-pro</name>
