@@ -13,6 +13,7 @@
         <module>array-sort</module>
         <module>simple-stack</module>
         <module>lru-cache</module>
+        <module>concurrence-action</module>
     </modules>
 
     <name>tiny-pro</name>
