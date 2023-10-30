@@ -12,7 +12,6 @@
         <module>hashtable</module>
         <module>array-sort</module>
         <module>simple-stack</module>
-        <module>lru-cache</module>
         <module>concurrence-action</module>
         <module>mini-list</module>
         <module>array-search</module>

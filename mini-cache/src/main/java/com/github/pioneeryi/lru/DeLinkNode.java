@@ -2,8 +2,8 @@ package com.github.pioneeryi.lru;
 
 // 双端链表节点
 public class DeLinkNode {
-    Object key;
-    Object value;
+    int key;
+    int value;
 
     DeLinkNode pre;
     DeLinkNode next;
@@ -11,12 +11,12 @@ public class DeLinkNode {
     public DeLinkNode() {
     }
 
-    public DeLinkNode(Object key, Object value) {
+    public DeLinkNode(int key, int value) {
         this.key = key;
         this.value = value;
     }
 
-    public DeLinkNode(Object key, Object value, DeLinkNode pre, DeLinkNode next) {
+    public DeLinkNode(int key, int value, DeLinkNode pre, DeLinkNode next) {
         this.key = key;
         this.value = value;
         this.pre = pre;

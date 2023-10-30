@@ -1,6 +1,6 @@
 package com.github.pioneeryi;
 
-public interface ICache<K, V> {
+public interface ICache {
 
     /**
      * 获取缓存中的值.
@@ -8,7 +8,7 @@ public interface ICache<K, V> {
      * @param key 缓存 KEY
      * @return 缓存值
      */
-    V get(K key);
+    int get(int key);
 
     /**
      * 向缓存中插入值.
@@ -18,6 +18,6 @@ public interface ICache<K, V> {
      * @param key   缓存 KEY
      * @param value 缓存值
      */
-    void put(K key, V value);
+    void put(int key, int value);
 
 }

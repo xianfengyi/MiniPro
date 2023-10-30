@@ -25,7 +25,7 @@ public class LRUCache implements ICache {
     }
 
     @Override
-    public Object get(Object key) {
+    public int get(int key) {
         DeLinkNode node = content.get(key);
         if (node == null) {
             return -1;
@@ -35,7 +35,7 @@ public class LRUCache implements ICache {
     }
 
     @Override
-    public void put(Object key, Object value) {
+    public void put(int key, int value) {
         DeLinkNode node = content.get(key);
         if (node != null) {
             node.value = value;
