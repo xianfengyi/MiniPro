@@ -17,6 +17,7 @@
         <module>array-search</module>
         <module>str-pro</module>
         <module>mini-cache</module>
+        <module>mini-str</module>
     </modules>
 
     <name>tiny-pro</name>
