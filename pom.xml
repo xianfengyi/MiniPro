@@ -18,6 +18,7 @@
         <module>str-pro</module>
         <module>mini-cache</module>
         <module>mini-str</module>
+        <module>mini-array</module>
     </modules>
 
     <name>tiny-pro</name>
