@@ -3,7 +3,7 @@ package com.github.pioneeryi.lfu;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LFUCache2Test {
+public class LFUCacheCustomTest {
 
     @Test
     public void testLRUCache() {
