@@ -7,7 +7,7 @@ public class LFUCache2Test {
 
     @Test
     public void testLRUCache() {
-        LFUCache2 cache = new LFUCache2(2 /* capacity (缓存容量) */);
+        LFUCacheCustom cache = new LFUCacheCustom(2 /* capacity (缓存容量) */);
 
         cache.put(1, 1);
         cache.put(2, 2);

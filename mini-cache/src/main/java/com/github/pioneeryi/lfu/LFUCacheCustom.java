@@ -7,15 +7,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LFUCache2 implements ICache {
+public class LFUCacheCustom implements ICache {
     private int capacity;
+    // key: node value, value: node
     private Map<Integer, Node> content;
+    // key：frequency, value: node list
     private Map<Integer, List<Node>> sameFre;
-
     // 最小频次值
     private int minFre = Integer.MAX_VALUE;
 
-    public LFUCache2(int capacity) {
+    public LFUCacheCustom(int capacity) {
         this.capacity = capacity;
         this.content = new HashMap<>();
         this.sameFre = new HashMap<>();
@@ -35,7 +36,7 @@ public class LFUCache2 implements ICache {
     public void put(int key, int value) {
         Node node = content.get(key);
         if (node != null) {
-            // 更新缓存值
+            // update node
             node.value = value;
             updateNodeFrequency(node);
             return;
@@ -76,6 +77,7 @@ public class LFUCache2 implements ICache {
             minFre = newFre;
         }
         List sameFreList = sameFre.getOrDefault(newFre, new ArrayList<>());
+        // 采用头插法
         sameFreList.add(0, node);
         sameFre.put(newFre, sameFreList);
     }
