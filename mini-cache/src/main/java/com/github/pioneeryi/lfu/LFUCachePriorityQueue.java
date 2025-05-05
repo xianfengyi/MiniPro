@@ -8,14 +8,14 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 // LFUCache, 最近使用频次最低的淘汰
-public class LFUCache1 implements ICache {
+public class LFUCachePriorityQueue implements ICache {
 
     private Map<Object, Node> content;
     private Queue<Node> queue;
     private int capacity;
     private int timeCnt;
 
-    public LFUCache1(int capacity) {
+    public LFUCachePriorityQueue(int capacity) {
         this.capacity = capacity;
         this.content = new HashMap<>();
         queue = new PriorityQueue<Node>();
